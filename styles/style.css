@@ -53,7 +53,6 @@ ol {
   align-items: end;
   gap: 30px;
   margin: auto 30px;
-  height: 534px;
 }
 
 .result {
@@ -63,7 +62,8 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 710px;
+  width: 711px;
+  height: 386px;
   margin-bottom: 16px;
 }
 
@@ -79,6 +79,7 @@ ol {
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
+  line-height: calc(21.6 / 18);
 }
 
 .search-form__fieldset {
@@ -106,8 +107,8 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  border: 1px solid #fff;
-  padding: 0 1px;
+  outline: 1px solid #fff; 
+  outline-offset: 1px;
 }
 
 .search-form__textfield {
@@ -119,13 +120,12 @@ ol {
   background-color: inherit;
   caret-color : #fff;
   width: 225px;
+  padding-left: 0;
 }
 
 .search-form__textfield:focus-visible {
-  outline-style: solid;
-  outline-width: 1px;
-  outline-offset: 1px;
-  outline-color: #fff;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
 
@@ -152,7 +152,7 @@ ol {
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
-  position: absolute;
+  display: block;
   width: 15px;
   height: 15px;
   margin: 1px;
@@ -166,10 +166,11 @@ ol {
 .button {
   color: #fff;
   background-color: inherit;
+  font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   border: 1px solid #fff;
-  padding: 6px 0;
+  padding: 4px 0;
   width: 100%;
   cursor: pointer;
 }
@@ -201,16 +202,18 @@ ol {
 
 
 .content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, Arial, sans-serif;
   font-size: 75px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: calc(70.5 / 75);
-  margin-bottom: 26px;
 }
 
 .content__accent {
@@ -221,10 +224,10 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 34px;
-  overflow-x: hidden;
-  width: 400px;
-  height: 298px;
+  gap: 28px;
+  overflow: auto;
+  max-width: 400px;
+  max-height: 300px;
 }
 
 
@@ -245,9 +248,9 @@ ol {
 .content__card-link {
   display: block;
   color: #fff;
-  padding: 2px 0 2px 2px;
   text-decoration: none;
   margin: 2px;
+  padding: 2px 0 2px 2px;
 }
 
 .content__video-card {
@@ -259,12 +262,18 @@ ol {
 .content__video-card-title {
   font-family: Oswald;
   font-size: 30px;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
+  margin-bottom: 6px;
 }
 
 .content__video-card-description-container {
   flex-grow: 1;
+}
+
+.content__video-card-description {
+  line-height: calc(16.2 / 18);
 }
 
 .content__video-card-thumbnail {
