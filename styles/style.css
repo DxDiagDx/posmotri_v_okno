@@ -227,7 +227,7 @@ ol {
   gap: 28px;
   overflow: auto;
   max-width: 400px;
-  max-height: 300px;
+  min-height: 300px;
 }
 
 
